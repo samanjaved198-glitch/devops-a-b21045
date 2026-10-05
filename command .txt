@@ -1,0 +1,76 @@
+cd Desktop
+mkdir SetA_B21045
+cd SetA_B21045
+mkdir site
+mkdir evidence
+code .
+dir /s /b
+move index.html site\
+git init
+git branch -M main
+git add .
+git status
+git commit -m "Initial portfolio website"
+git log --oneline
+git config --global user.name "Saman javed"
+git config --global user.email "samanjaved198@gmail.com"
+git remote add origin https://github.com/samanjaved198-glitch/finallab.git
+git push -u origin main
+git remote set-url origin https://github.com/samanjaved198-glitch/devops-a-b21045.git
+git remote -v
+git push
+git checkout -b update-content
+git add .
+git commit -m "Add fourth technical skill"
+git checkout main
+git merge update-content
+git push origin main
+git push origin update-content
+git log --oneline --graph --all
+git branch -a
+mkdir .github\workflows
+git add .
+git commit -m "Add GitHub Pages workflow"
+git push
+type .github\workflows\pages.yml
+git add .
+git commit -m "Fix Pages workflow content"
+git push
+git add .
+git commit -m "Update heading"
+git push
+git add .
+git commit -m "Update heading"
+git push
+echo Repository: https://github.com/samanjaved198-glitch/devops-a-b21045 > links.txt
+echo GitHub Pages: https://samanjaved198-glitch.github.io/devops-a-b21045/ >> links.txt
+type links.txt
+docker version
+echo FROM nginx:alpine> Dockerfile
+echo COPY site/ /usr/share/nginx/html/>> Dockerfile
+type Dockerfile
+docker build -t devops-a-b21045:v1 .
+docker run -d --name devops-a-b21045 -p 8080:80 devops-a-b21045:v1
+docker images
+docker ps
+minikube version
+winget install Kubernetes.minikube
+minikube version
+kubectl version --client
+minikube start --driver=docker
+kubectl config current-context
+kubectl get nodes
+minikube image load devops-a-b21045:v1
+minikube image ls
+type deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl get pods
+kubectl get deployment
+type service.yaml
+kubectl apply -f service.yaml
+kubectl get svc
+minikube service devops-a-b21045 --url
+kubectl scale deployment devops-a-b21045 --replicas=2
+kubectl get pods
+kubectl get deployment
+doskey /history > commands.txt
