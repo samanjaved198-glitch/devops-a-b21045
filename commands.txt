@@ -1,0 +1,50 @@
+mkdir .github\workflows
+git add .
+git commit -m "Add GitHub Pages workflow"
+git push
+type .github\workflows\pages.yml
+git add .
+git commit -m "Fix Pages workflow content"
+git push
+git add .
+git commit -m "Update heading"
+git push
+git add .
+git commit -m "Update heading"
+git push
+echo Repository: https://github.com/samanjaved198-glitch/devops-a-b21045 > links.txt
+echo GitHub Pages: https://samanjaved198-glitch.github.io/devops-a-b21045/ >> links.txt
+type links.txt
+docker version
+echo FROM nginx:alpine> Dockerfile
+echo COPY site/ /usr/share/nginx/html/>> Dockerfile
+type Dockerfile
+docker build -t devops-a-b21045:v1 .
+docker run -d --name devops-a-b21045 -p 8080:80 devops-a-b21045:v1
+docker images
+docker ps
+minikube version
+winget install Kubernetes.minikube
+minikube version
+kubectl version --client
+minikube start --driver=docker
+kubectl config current-context
+kubectl get nodes
+minikube image load devops-a-b21045:v1
+minikube image ls
+type deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl get pods
+kubectl get deployment
+type service.yaml
+kubectl apply -f service.yaml
+kubectl get svc
+minikube service devops-a-b21045 --url
+kubectl scale deployment devops-a-b21045 --replicas=2
+kubectl get pods
+kubectl get deployment
+kubectl get pods
+kubectl get deployment
+kubectl get pods
+kubectl get deployment
+doskey /history > commands.txt

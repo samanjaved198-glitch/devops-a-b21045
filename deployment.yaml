@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-a-b21045
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-a-b21045
+  template:
+    metadata:
+      labels:
+        app: devops-a-b21045
+    spec:
+      containers:
+        - name: devops-a-b21045
+          image: devops-a-b21045:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
